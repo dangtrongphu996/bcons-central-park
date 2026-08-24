@@ -1038,6 +1038,56 @@ ol {
     color: var(--text-color);
 }
 
+.project-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 18px;
+    margin-top: 28px;
+}
+
+.project-detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    min-width: 0;
+    padding: 14px;
+    background: var(--lighter-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+}
+
+.project-detail-item > i {
+    flex: 0 0 20px;
+    padding-top: 3px;
+    color: var(--secondary-color);
+    font-size: 17px;
+    text-align: center;
+}
+
+.project-detail-item div {
+    min-width: 0;
+}
+
+.project-detail-item span,
+.project-detail-item strong {
+    display: block;
+}
+
+.project-detail-item span {
+    margin-bottom: 4px;
+    color: var(--text-light);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.project-detail-item strong {
+    color: var(--dark-color);
+    font-size: 13px;
+    line-height: 1.45;
+}
+
 .overview-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -2217,6 +2267,10 @@ body.lightbox-open {
 
     .overview-text h3 {
         font-size: 26px;
+    }
+
+    .project-details {
+        grid-template-columns: 1fr;
     }
 
     .overview-stats {
