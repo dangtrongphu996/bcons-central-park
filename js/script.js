@@ -64,3 +64,55 @@ if (contactForm && formStatus) {
 		}
 	});
 }
+
+if (pageImages.length > 0) {
+	const lightbox = document.createElement('div');
+	const lightboxImage = document.createElement('img');
+	const closeButton = document.createElement('button');
+
+	lightbox.className = 'lightbox';
+	lightbox.setAttribute('role', 'dialog');
+	lightbox.setAttribute('aria-modal', 'true');
+	lightbox.setAttribute('aria-label', 'Xem ảnh thư viện');
+
+	lightboxImage.className = 'lightbox-image';
+	lightboxImage.alt = '';
+
+	closeButton.className = 'lightbox-close';
+	closeButton.type = 'button';
+	closeButton.setAttribute('aria-label', 'Đóng ảnh');
+	closeButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+
+	lightbox.append(lightboxImage, closeButton);
+	document.body.appendChild(lightbox);
+
+	const closeLightbox = () => {
+		lightbox.classList.remove('is-open');
+		document.body.classList.remove('lightbox-open');
+		lightboxImage.removeAttribute('src');
+	};
+
+	pageImages.forEach((image) => {
+		image.addEventListener('click', () => {
+			lightboxImage.src = image.src;
+			lightboxImage.alt = image.alt;
+			lightbox.classList.add('is-open');
+			document.body.classList.add('lightbox-open');
+			closeButton.focus();
+		});
+	});
+
+	closeButton.addEventListener('click', closeLightbox);
+
+	lightbox.addEventListener('click', (event) => {
+		if (event.target === lightbox) {
+			closeLightbox();
+		}
+	});
+
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
+			closeLightbox();
+		}
+	});
+}
