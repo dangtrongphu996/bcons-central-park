@@ -1336,6 +1336,142 @@ ol {
 
 
 /* =========================================================
+   12.6 EXTERNAL AMENITIES
+   ========================================================= */
+
+.external-amenities {
+    background: #f8faf8;
+}
+
+.external-amenities-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: start;
+}
+
+.external-amenities-image {
+    order: 2;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+.external-amenities-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.external-amenities-categories {
+    order: 1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.external-category {
+    padding: 22px 20px;
+    background: var(--white-color);
+    border: 1px solid #dbe5dd;
+    border-radius: 14px;
+    box-shadow: var(--shadow-sm);
+}
+
+.external-category-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin-bottom: 16px;
+}
+
+.external-category-heading i {
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    background: #15803d;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+.external-category-heading h3 {
+    padding-top: 3px;
+    color: var(--dark-color);
+    font-size: 15px;
+    line-height: 1.35;
+}
+
+.external-distance-list {
+    display: grid;
+    gap: 10px;
+}
+
+.external-distance-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    color: var(--text-color);
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.distance-badge {
+    flex: 0 0 auto;
+    min-width: 46px;
+    padding: 3px 7px;
+    color: #92400e;
+    background: #fef3c7;
+    border: 1px solid #fcd34d;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 800;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.external-amenities-benefits {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-top: 32px;
+    padding-top: 26px;
+    border-top: 1px solid #dbe5dd;
+}
+
+.external-benefit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: var(--dark-color);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.external-benefit i {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #15803d;
+    background: rgba(21, 128, 61, 0.1);
+    border: 1px solid rgba(21, 128, 61, 0.18);
+    border-radius: 50%;
+    font-size: 15px;
+}
+
+
+/* =========================================================
    13. AMENITIES
    ========================================================= */
 
@@ -2184,6 +2320,15 @@ body.lightbox-open {
         grid-template-columns: 1fr;
     }
 
+    .external-amenities-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .external-amenities-benefits {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 22px;
+    }
+
     .overview-image {
         height: 420px;
     }
@@ -2200,6 +2345,10 @@ body.lightbox-open {
 
     .amenities-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .external-amenities-benefits {
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .apartment-grid {
@@ -2372,6 +2521,15 @@ body.lightbox-open {
 
     .amenities-grid {
         grid-template-columns: 1fr;
+    }
+
+    .external-amenities-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .external-amenities-benefits {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 22px;
     }
 
     .video-highlights {
